@@ -127,7 +127,6 @@
 
     <section>
         <h2>Habilidades</h2>
-        <div class="skills">
             <span>HTML5</span>
             <span>CSS3</span>
             <span>JavaScript</span>
@@ -174,14 +173,24 @@
             <div id="taskList">
 
             </div>
-            <!-- referencia al script -->
-            <script src="script.js"></script>
         </body>
     </section>
+    <section>
 
-</html>
+        <body>
+            <h2> My shopping list</h2>
+            <form>
+                <label for="item"> Enter a new item: </label>
+                <input type="text" name="item" id="item">
+                <button id="boton"> Add item</button>
+            </form>
+            <ul id="lista">
 
+            </ul>
+            
+        </section>
 <section>
+</html>
     <h2>Contacto</h2>
     <p>Email: luna@email.com</p>
     <p>Teléfono: 300 000 0000</p>
@@ -193,8 +202,37 @@
 </footer>
 
 </body>
+<script>
+                     const lista = document.getElementById("lista");
+                     const texto = document.getElementById("item");
+                     const boton = document.getElementById("boton");
 
+                     boton.addEventListener('click', (even => {
+
+                         event.preventDefault();
+                         const newItem = texto.value;
+                         texto.value = '';
+
+                         const listItem = document.createElement("li");
+                         const listText = document.createElement("span");
+                         const listBtn = document.createElement("button");
+
+                         listItem.appendChild(listText);
+                         listText.textContent = newItem;
+
+                         listItem.appendChild(listBtn);
+                         listBtn.textContent = "Delete";
+
+                         lista.appendChild(listItem);
+                         listBtn.addEventListener('click', () => {
+                             lista.removeChild(listItem);
+                         });
+                         texto.focus();
+
+                     }));
+            </script>
 
 </html>
+
 
 
