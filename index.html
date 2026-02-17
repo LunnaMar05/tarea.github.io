@@ -5,16 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio - Hoja de Vida</title>
+
     <style>
         body {
             line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
         }
 
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             background-color: #f4f4f4;
-            color: #000000;
         }
 
         header {
@@ -27,29 +36,29 @@
         section {
             padding: 20px 40px;
             margin: 20px;
-            background-color: white;
+            background-color: rgba(254, 250, 250, 0.882);
             border-radius: 8px;
         }
 
         h2 {
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 1px;
-
+            border-bottom: 2px solid #363434;
         }
 
         ul {
             list-style: square;
-            padding-left: 5px;
         }
 
         .skills span {
             display: inline-block;
             background-color: #3a9aa9;
             color: white;
-            padding: 6px 5px;
+            padding: 6px 8px;
             margin: 5px;
             border-radius: 5px;
-            font-size: 14px;
+        }
+
+        button {
+            margin-left: 5px;
         }
 
         .foto-perfil {
@@ -58,9 +67,7 @@
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid white;
-            margin-bottom: 15px;
         }
-
 
         footer {
             text-align: center;
@@ -72,167 +79,345 @@
 </head>
 
 <body>
+    <div class="container">
+        <header>
+            <img src="foto.jpg" class="foto-perfil">
+            <h1>Luna Pinto</h1>
+            <p>Desarrolladora Web / Ingeniera de Sistemas</p>
+        </header>
 
-    <header>
-        <img src="foto.jpg" alt="Foto de perfil" class="foto-perfil" style="float: left; margin-right: 15px;">
-        <h1> Luna Pinto</h1>
-        <p>Desarrolladora Web / Estudiante / Ingeniera de sistemas</p>
+        <section>
+            <h2>Perfil Profesional</h2>
+            <p>
+                Ingeniera en Sistemas y Desarrolladora de Software con experiencia en análisis y desarrollo de
+                soluciones
+                tecnológicas. Destaca por su pensamiento lógico, capacidad de resolución de problemas y trabajo en
+                equipo.
+                Orientada a la innovación, la calidad del código y el aprendizaje continuo.
+            </p>
+        </section>
 
-    </header>
+        <section>
+            <h2>Experiencia Laboral</h2>
 
-    <section>
-        <h2>Perfil Profesional</h2>
-        <p>
-            Ingeniera en Sistemas y Desarrolladora de Software con experiencia en análisis y desarrollo de soluciones
-            tecnológicas. Destaca por su pensamiento lógico, capacidad de resolución de problemas y trabajo en equipo.
-            Orientada a la innovación, la calidad del código y el aprendizaje continuo.
-        </p>
-    </section>
+            <ul id="expList">
+                <li><strong>NovaTech Solutions</strong> – Desarrollador Web Jr (2023 - 2024)</li>
+                <li><strong>InnovaSoft Systems</strong> – Practicante (2022 - 2023)</li>
+            </ul>
 
-    <section>
-        <h2>Experiencia Laboral</h2>
-        <ul>
-            <li>
-                <strong>NovaTech Solutions</strong> – Desarrollador Web Jr
+            <h3>Agregar nueva experiencia</h3>
+            <input type="text" id="empresa" placeholder="Empresa">
+            <input type="text" id="cargo" placeholder="Cargo">
+            <button id="addExp">Agregar</button>
+        </section>
+
+        <section>
+            <h2>Formación Académica</h2>
+            <ul>
+                <li>
+                    <strong>Tecnólogo / Ingeniera en Sistemas</strong><br>
+                    Universidad santiago de Cali<br>
+                    <em>2020 - 2024</em>
+                </li>
                 <br>
-                <em>2023 - 2024</em><br>
-                Desarrollo de páginas web, mantenimiento y soporte técnico.
-            </li>
-            <br>
-            <li>
-                <strong>InnovaSoft Systems</strong> – Practicante
-                <br>
-                <em>2022 - 2023</em><br>
-                Apoyo en proyectos web y documentación técnica.
-            </li>
-        </ul>
-    </section>
+                <li>
+                    <strong>Bachiller Académico</strong><br>
+                    Institución Educativa IETI<br>
+                    <em>2019</em>
+                </li>
+            </ul>
+        </section>
 
-    <section>
-        <h2>Formación Académica</h2>
-        <ul>
-            <li>
-                <strong>Tecnólogo / Ingeniera en Sistemas</strong><br>
-                Universidad santiago de Cali<br>
-                <em>2020 - 2024</em>
-            </li>
-            <br>
-            <li>
-                <strong>Bachiller Académico</strong><br>
-                Institución Educativa IETI<br>
-                <em>2019</em>
-            </li>
-        </ul>
-    </section>
+        <section>
+            <h2>Habilidades</h2>
 
-    <section>
-        <h2>Habilidades</h2>
-            <span>HTML5</span>
-            <span>CSS3</span>
-            <span>JavaScript</span>
-            <span>Git</span>
-            <span>Trabajo en equipo</span>
-            <span>Comunicación</span>
-            <span>Inglés avanzado</span>
-        </div>
-    </section>
+            <div id="skillsContainer" class="skills">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>Git</span>
+                <span>Trabajo en equipo</span>
+                <span>Comunicación</span>
+                <span>Inglés avanzado</span>
+            </div>
 
-    <section>
+            <h3>Agregar nueva habilidad</h3>
+            <input type="text" id="skillInput" placeholder="Nueva habilidad">
+            <button id="addSkill">Agregar</button>
+        </section>
 
-        <head>
-            <title></title>
-            <meta charset="utf-8">
-            <!-- referencia a la hoja de estilo -->
-            <link rel="stylesheet" href="styles.css">
-        </head>
-
-        <body>
+        <section>
             <h2>Mi lista de tareas</h2>
-            <!--formulario para ingresar nuevas tareas: -->
+
             <form id="taskForm">
-                <div class="form-group">
-                    <label for="title">Título de la tarea</label>
-                    <input type="text" id="title" required>
-                </div>
-                <div class="form-group">
-                    <label for="date">Fecha de finalización</label>
-                    <input type="date" id="date" required>
-                </div>
-                <div class="form-group">
-                    <label for="status">Estado</label>
-                    <select id="status" required>
-                        <option value="0">Pendiente</option>
-                        <option value="1">Finalizada</option>
-                        <option value="2">Desarrollo</option>
-                    </select>
-                </div>
+                <input type="text" id="title" placeholder="Título" required>
+                <input type="date" id="date" required>
+                <select id="status">
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="Finalizada">Finalizada</option>
+                    <option value="Desarrollo">Desarrollo</option>
+                </select>
                 <button type="submit">Crear tarea</button>
             </form>
 
-            <!-- contenedor donde se mostrarán las tareas creadas: -->
-            <div id="taskList">
-
-            </div>
-        </body>
-    </section>
-    <section>
-
-        <body>
-            <h2> My shopping list</h2>
-            <form>
-                <label for="item"> Enter a new item: </label>
-                <input type="text" name="item" id="item">
-                <button id="boton"> Add item</button>
-            </form>
-            <ul id="lista">
-
-            </ul>
-            
+            <div id="taskList"></div>
         </section>
-<section>
-</html>
-    <h2>Contacto</h2>
-    <p>Email: luna@email.com</p>
-    <p>Teléfono: 300 000 0000</p>
-    <p>LinkedIn / GitHub: enlace aquí</p>
-</section>
+        <section>
+            <h2>Mi lista de compras</h2>
 
-<footer>
-    <p>© 2026 - Tu Nombre</p>
-</footer>
+            <form>
+                <input type="text" id="item" placeholder="Nuevo item">
+                <button id="boton">Añadir item</button>
+            </form>
 
+            <ul id="lista"></ul>
+        </section>
+
+        <section>
+            <h2>Contacto</h2>
+            <p>Email: luna@email.com</p>
+            <p>Teléfono: 300 000 0000</p>
+        </section>
+
+        <footer>
+            <p>© 2026 - Luna Pinto</p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const lista = document.getElementById("lista");
+            const texto = document.getElementById("item");
+            const boton = document.getElementById("boton");
+
+            cargarCompras();
+
+            boton.addEventListener("click", (event) => {
+                event.preventDefault();
+                if (texto.value.trim() === "") return;
+
+                agregarCompra(texto.value);
+                guardarCompras();
+                texto.value = "";
+                texto.focus();
+            });
+
+            function agregarCompra(valor) {
+                const li = document.createElement("li");
+                const span = document.createElement("span");
+                const btn = document.createElement("button");
+
+                span.textContent = valor;
+                btn.textContent = "Eliminar";
+
+                btn.addEventListener("click", () => {
+                    li.remove();
+                    guardarCompras();
+                });
+
+                li.appendChild(span);
+                li.appendChild(btn);
+                lista.appendChild(li);
+            }
+
+            function guardarCompras() {
+                const items = [];
+                document.querySelectorAll("#lista li span").forEach(el => {
+                    items.push(el.textContent);
+                });
+                localStorage.setItem("compras", JSON.stringify(items));
+            }
+
+            function cargarCompras() {
+                const datos = JSON.parse(localStorage.getItem("compras")) || [];
+                datos.forEach(item => agregarCompra(item));
+            }
+
+            const skillInput = document.getElementById("skillInput");
+            const addSkill = document.getElementById("addSkill");
+            const skillsContainer = document.getElementById("skillsContainer");
+
+            cargarSkills();
+
+            addSkill.addEventListener("click", () => {
+                if (skillInput.value.trim() === "") return;
+
+                agregarSkill(skillInput.value);
+                guardarSkills();
+                skillInput.value = "";
+            });
+
+            function agregarSkill(valor) {
+                const span = document.createElement("span");
+                const btn = document.createElement("button");
+
+                span.textContent = valor;
+                btn.textContent = "X";
+
+                btn.addEventListener("click", () => {
+                    span.remove();
+                    guardarSkills();
+                });
+
+                span.appendChild(btn);
+                skillsContainer.appendChild(span);
+            }
+
+            function guardarSkills() {
+                const skills = [];
+
+                document.querySelectorAll("#skillsContainer span").forEach(el => {
+                    const texto = el.childNodes[0].textContent.trim();
+                    if (el.querySelector("button")) {
+                        skills.push(texto);
+                    }
+                });
+
+                localStorage.setItem("skills", JSON.stringify(skills));
+            }
+
+            function cargarSkills() {
+                const datos = JSON.parse(localStorage.getItem("skills")) || [];
+
+                datos.forEach(skill => {
+                    // Verificar si ya existe en el HTML
+                    const existe = Array.from(document.querySelectorAll("#skillsContainer span"))
+                        .some(el => el.textContent.trim() === skill);
+
+                    if (!existe) {
+                        agregarSkill(skill);
+                    }
+                });
+            }
+            const empresa = document.getElementById("empresa");
+            const cargo = document.getElementById("cargo");
+            const addExp = document.getElementById("addExp");
+            const expList = document.getElementById("expList");
+
+            cargarExperiencia();
+
+            addExp.addEventListener("click", () => {
+                if (empresa.value.trim() === "" || cargo.value.trim() === "") return;
+
+                agregarExperiencia(empresa.value, cargo.value);
+                guardarExperiencia();
+                empresa.value = "";
+                cargo.value = "";
+            });
+
+            function agregarExperiencia(emp, car) {
+                const li = document.createElement("li");
+                const span = document.createElement("span");
+                const btn = document.createElement("button");
+
+                span.innerHTML = "<strong>" + emp + "</strong> - " + car;
+                btn.textContent = "Eliminar";
+
+                btn.addEventListener("click", () => {
+                    li.remove();
+                    guardarExperiencia();
+                });
+
+                li.appendChild(span);
+                li.appendChild(btn);
+                expList.appendChild(li);
+            }
+
+            function guardarExperiencia() {
+                const datos = [];
+                document.querySelectorAll("#expList li span").forEach(el => {
+                    datos.push(el.innerHTML);
+                });
+                localStorage.setItem("experiencia", JSON.stringify(datos));
+            }
+
+            function cargarExperiencia() {
+                const datos = JSON.parse(localStorage.getItem("experiencia")) || [];
+
+                datos.forEach(item => {
+                    const li = document.createElement("li");
+                    const span = document.createElement("span");
+                    const btn = document.createElement("button");
+
+                    span.innerHTML = item;
+                    btn.textContent = "Eliminar";
+
+                    btn.addEventListener("click", () => {
+                        li.remove();
+                        guardarExperiencia();
+                    });
+
+                    li.appendChild(span);
+                    li.appendChild(btn);
+                    expList.appendChild(li);
+                });
+            }
+            const taskForm = document.getElementById("taskForm");
+            const taskList = document.getElementById("taskList");
+
+            cargarTareas();
+
+            taskForm.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                const title = document.getElementById("title").value;
+                const date = document.getElementById("date").value;
+                const status = document.getElementById("status").value;
+
+                agregarTarea(title, date, status);
+                guardarTareas();
+                taskForm.reset();
+            });
+
+            function agregarTarea(titulo, fecha, estado) {
+                const div = document.createElement("div");
+                const btn = document.createElement("button");
+
+                div.innerHTML = `
+            <strong>${titulo}</strong> - ${fecha} - ${estado}
+        `;
+
+                btn.textContent = "Eliminar";
+
+                btn.addEventListener("click", () => {
+                    div.remove();
+                    guardarTareas();
+                });
+
+                div.appendChild(btn);
+                taskList.appendChild(div);
+            }
+
+            function guardarTareas() {
+                const tareas = [];
+                document.querySelectorAll("#taskList div").forEach(el => {
+                    tareas.push(el.innerHTML.replace('<button>Eliminar</button>', ''));
+                });
+                localStorage.setItem("tareas", JSON.stringify(tareas));
+            }
+
+            function cargarTareas() {
+                const datos = JSON.parse(localStorage.getItem("tareas")) || [];
+                taskList.innerHTML = "";
+                datos.forEach(tarea => {
+                    const div = document.createElement("div");
+                    const btn = document.createElement("button");
+
+                    div.innerHTML = tarea;
+                    btn.textContent = "Eliminar";
+
+                    btn.addEventListener("click", () => {
+                        div.remove();
+                        guardarTareas();
+                    });
+
+                    div.appendChild(btn);
+                    taskList.appendChild(div);
+                });
+            }
+
+        });
+
+    </script>
 </body>
-<script>
-                     const lista = document.getElementById("lista");
-                     const texto = document.getElementById("item");
-                     const boton = document.getElementById("boton");
-
-                     boton.addEventListener('click', (even => {
-
-                         event.preventDefault();
-                         const newItem = texto.value;
-                         texto.value = '';
-
-                         const listItem = document.createElement("li");
-                         const listText = document.createElement("span");
-                         const listBtn = document.createElement("button");
-
-                         listItem.appendChild(listText);
-                         listText.textContent = newItem;
-
-                         listItem.appendChild(listBtn);
-                         listBtn.textContent = "Delete";
-
-                         lista.appendChild(listItem);
-                         listBtn.addEventListener('click', () => {
-                             lista.removeChild(listItem);
-                         });
-                         texto.focus();
-
-                     }));
-            </script>
-
 </html>
-
-
-
